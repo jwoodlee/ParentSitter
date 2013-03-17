@@ -1,0 +1,11 @@
+development:
+  facebook_key: 129652407201708
+  facebook_secret: 7ebc658d67f8b11c50dbfa051958152f
+
+test:
+  facebook_key: 129652407201708
+  facebook_secret: 7ebc658d67f8b11c50dbfa051958152f
+
+production:
+  facebook_key: 102940819767137
+  facebook_secret: b7305faa7f4d8d8fae4005134a6a9b11

@@ -1,2 +1,2 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<%= link_to "Welcome Parent #{image_tag('facebook.png')}".html_safe, user_omniauth_authorize_path(:facebook,{'type' => 'parent'}) %>
+<%= link_to "Welcome Sitter #{image_tag('facebook.png')}", user_omniauth_authorize_path(:facebook,{'type':'sitter'}) %>
