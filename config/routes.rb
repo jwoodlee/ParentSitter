@@ -1,4 +1,8 @@
 ParentSitter::Application.routes.draw do
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   # devise_for :users
 
   match '/users/auth/facebook' => 'users/omniauth_callbacks#facebook'

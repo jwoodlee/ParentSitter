@@ -9,7 +9,6 @@ gem 'rails', '3.2.11'
 gem 'devise', '1.5.1'
 gem 'omniauth'
 gem 'omniauth-twitter'
-gem 'activeadmin'
 
 
 # Gems used only for assets and not required
@@ -40,6 +39,9 @@ end
 group :production do
 	gem 'pg'
 end
+
+gem 'activeadmin'
+  gem "meta_search",    '>= 1.1.0.pre'
 
 
 # To use ActiveModel has_secure_password

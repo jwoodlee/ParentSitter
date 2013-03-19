@@ -213,6 +213,7 @@ DEPENDENCIES
   execjs
   jquery-rails
   less-rails
+  meta_search (>= 1.1.0.pre)
   mysql2
   omniauth
   omniauth-facebook
