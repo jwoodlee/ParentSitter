@@ -1,2 +1,21 @@
-<%= link_to "Welcome Parent #{image_tag('facebook.png')}".html_safe, user_omniauth_authorize_path(:facebook,{'type' => 'parent'}) %><br/>
-<%= link_to "Welcome Sitter #{image_tag('facebook.png')}".html_safe, user_omniauth_authorize_path(:facebook,{'type' => 'sitter'}) %>
+<div class="container">
+		<div class="row">
+			<div class="span6">
+			</div>
+			<div class="span6">
+				
+				<div class="user-actions pull-right">
+					<% unless user_signed_in? %>
+						<div class="span4 well">
+<%= link_to "Welcome Parent #{image_tag('facebook.png')}".html_safe, user_omniauth_authorize_path(:facebook,:state => 'parent'), :class => "pull-left" %>
+<%= link_to "Welcome Sitter #{image_tag('facebook.png')}".html_safe, user_omniauth_authorize_path(:facebook,:state => 'sitter'), :class => "pull-right	" %>
+</div>						
+					<% else %>
+						<span class="label"> &nbsp; Welcome, <%= current_user.first_name %> ! &nbsp;</span>
+						<%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => "btn") %>  
+					<% end %>	
+				</div>
+				
+			</div>
+		</div>
+	</div>

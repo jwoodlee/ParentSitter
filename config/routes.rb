@@ -1,7 +1,17 @@
 ParentSitter::Application.routes.draw do
   # devise_for :users
+
+  match '/users/auth/facebook' => 'users/omniauth_callbacks#facebook'
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   get "welcome/index"
+
+  resources :users do
+    collection do
+      post :create_user
+    end
+  end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
