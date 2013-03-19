@@ -12,7 +12,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         flash[:notice] = "You have registered as #{@user.type}.Try with the other link available"
       end
     else
-      session["devise.facebook_data"] = request.env["omniauth.auth"]
+      session["provider"] = request.env["omniauth.auth"]["provider"]
+      session["uid"] = request.env["omniauth.auth"]["uid"]
       puts "params#{params}"
       redirect_to new_user_url(:type => params[:state])
     end

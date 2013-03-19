@@ -12,8 +12,8 @@ class UsersController < ApplicationController
 			else
 				@user = Sitter.new(params['user'])
 			end 
-			@user.uid = session["devise.facebook_data"]["uid"]
-			@user.provider = session["devise.facebook_data"]["provider"]
+			@user.uid = session["uid"]
+			@user.provider = session["provider"]
 			if @user.save
       			redirect_to root_url, notice: 'User Registered Successfully.' 
 	        else
