@@ -5,7 +5,7 @@ gem 'rails', '3.2.11'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+
 gem 'devise', '1.5.1'
 gem 'omniauth'
 gem 'omniauth-twitter'
@@ -32,8 +32,13 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 
 group :development do
+	gem 'mysql2'
 	gem 'pry'
 	gem 'pry-debugger'
+end
+
+group :production do
+	gem 'pg'
 end
 
 
