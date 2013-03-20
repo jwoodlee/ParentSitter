@@ -15,7 +15,8 @@ ParentSitter::Application.routes.draw do
       post :create_user
     end
   end
-
+  resources :parents
+  resources :sitters
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
