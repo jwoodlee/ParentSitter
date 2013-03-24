@@ -30,10 +30,10 @@ gem 'jquery-rails'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
-group :development do
+group :development, :test do
 	gem 'mysql2'
 	gem 'pry'
-	gem 'pry-debugger'
+  gem 'pry-debugger'
 end
 
 group :production do
