@@ -41,7 +41,13 @@ group :production do
 end
 
 gem 'activeadmin', git: 'https://github.com/gregbell/active_admin.git'
-  gem "meta_search",    '>= 1.1.0.pre'
+gem "meta_search",    '>= 1.1.0.pre'
+
+group :test do
+  gem "rspec-rails", "~> 2.0"
+  gem 'shoulda-matchers'
+  gem "factory_girl_rails"
+end
 
 
 # To use ActiveModel has_secure_password

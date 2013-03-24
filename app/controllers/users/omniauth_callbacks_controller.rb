@@ -14,7 +14,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     else
       session[:user] = {
         :provider => request.env["omniauth.auth"]["provider"],
-        :uid => request.env["omniauth.auth"]["uid"],
+        :uid => request0.env["omniauth.auth"]["uid"],
         :email => request.env["omniauth.auth"]["extra"]["raw_info"]["email"],
         :first_name => request.env["omniauth.auth"]["extra"]["raw_info"]["first_name"],
         :last_name => request.env["omniauth.auth"]["extra"]["raw_info"]["last_name"],
