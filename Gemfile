@@ -47,6 +47,10 @@ group :test do
   gem "rspec-rails", "~> 2.0"
   gem 'shoulda-matchers'
   gem "factory_girl_rails"
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem "cucumber-websteps"
 end
 
 
