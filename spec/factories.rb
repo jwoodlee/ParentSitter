@@ -1,6 +1,6 @@
 FactoryGirl.define do
 	factory(:user) do |f|
-		f.email "test@example.com"
+		f.sequence(:email) { |n| 'bobsmith' + n.to_s + '@acmecorp.com' }
 		f.password "example" 
 		f.password_confirmation "example"
 		f.provider "facebook"
