@@ -9,6 +9,15 @@ require 'cucumber/rails'
 require 'capybara/rails'
 require 'capybara/session'
 
+begin
+  require 'database_cleaner'
+  require 'database_cleaner/cucumber'
+  DatabaseCleaner.strategy = :transaction
+rescue NameError
+  raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
+end
+
+
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
 # selectors in your step definitions to use the XPath syntax.
@@ -84,4 +93,11 @@ class Capybara::Selenium::Driver < Capybara::Driver::Base
   end
 end
 
+Before do
+  DatabaseCleaner.start
+end
+
+After do |scenario|
+  DatabaseCleaner.clean
+end
 # Delayed::Worker.delay_jobs = false

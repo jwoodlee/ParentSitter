@@ -3,8 +3,8 @@ development:
   facebook_secret: 7ebc658d67f8b11c50dbfa051958152f
 
 test:
-  facebook_key: 129652407201708
-  facebook_secret: 7ebc658d67f8b11c50dbfa051958152f
+  facebook_key: 516649288385767
+  facebook_secret: 99a95d278a104cdff142ca16fd0ca276
 
 production:
   facebook_key: 102940819767137
