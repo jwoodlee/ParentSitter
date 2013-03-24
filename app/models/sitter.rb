@@ -1,3 +1,2 @@
 class Sitter < User
-
 end

@@ -1,12 +1,16 @@
 class SittersController < ApplicationController
-	def create_user
-		@user = Sitter.new(params['user'])
-		@user.uid = session["uid"]
-		@user.provider = session["provider"]
-		if @user.save
-      		redirect_to root_url, notice: 'Sitter Registered Successfully.' 
-	    else
-		    redirect_to new_parent_path(:type => "sitter")
-     	end
+
+	def new
+		@record = Sitter.new(session[:sitter])
+		render :template => "users/new"
+	end
+
+	def create
+		@record = Sitter.new(params[:sitter])
+		if @record.save
+	  	redirect_to root_url, notice: 'Sitter Registered Successfully.' 
+	  else
+	    render :template => "users/new"
+    end
 	end
 end

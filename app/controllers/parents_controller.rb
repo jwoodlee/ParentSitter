@@ -1,12 +1,16 @@
 class ParentsController < ApplicationController
-	def create_user
-		@user = Parent.new(params['user'])
-		@user.uid = session["uid"]
-		@user.provider = session["provider"]
-		if @user.save
-      		redirect_to root_url, notice: 'Parent Registered Successfully.' 
-	    else
-		    redirect_to new_parent_path(:type => "parent")
-     	end
+
+	def new
+		@record = Parent.new(session[:user])
+		render :template => "users/new"
+	end
+
+	def create
+		@record = Parent.new(params[:parent])
+		if @record.save
+    	redirect_to root_url, notice: 'Parent Registered Successfully.' 
+    else
+	    render :template => "users/new"
+   	end
 	end
 end
