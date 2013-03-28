@@ -11,8 +11,8 @@ describe User do
 
 	it "should return the user with given uid and provider" do
 		omniauth_auth = OpenStruct.new({provider: "facebook", uid: "54564564yausdyui4564"})
-		@user1 = FactoryGirl.create(:user, uid: "54564564yausdyui4564", provider: "facebook")
-		@user2 = FactoryGirl.create(:user, uid: "5456878121usdyui4564", provider: "facebook")
-		User.find_for_facebook_oauth(omniauth_auth).should == Parent.where(id: @user1.id).first
+		@parent = FactoryGirl.create(:parent, uid: "54564564yausdyui4564", provider: "facebook")
+		@sitter = FactoryGirl.create(:sitter, uid: "5457899121usdyui4564", provider: "facebook")
+		User.find_for_facebook_oauth(omniauth_auth).should == Parent.where(id: @parent.id).first
 	end
 end

@@ -1,7 +1,7 @@
 class SittersController < ApplicationController
 
 	def new
-		@record = Sitter.new(session[:sitter])
+		@record = Sitter.new(session[:user])
 		render :template => "users/new"
 	end
 
