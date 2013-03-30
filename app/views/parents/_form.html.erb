@@ -1,0 +1,79 @@
+<%= form_for(@record,:url => @url, :html => {:class => "form-horizontal"}) do |f| %>
+
+  <%= render :partial => "shared/errors", :locals => { :obj => @record } %>
+
+  <%= f.hidden_field :uid %>
+  <%= f.hidden_field :provider %>
+  <div class="control-group">
+    <%= f.label :first_name, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :first_name, :required => true  %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :last_name, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :last_name, :required => true %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :email, :class => "control-label" %>
+    <div class="controls">
+      <%= f.email_field :email, :required => true %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :birth_date, :for => "user_birth_date", :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :birth_date, :required => true, :id => "user_birth_date" %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :gender, :class => "control-label" %>
+    <div class="controls">
+      <%= f.select :gender, options_for_select(["Male","Female"]) %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :zipcode, :class => "control-label" %>
+    <div class="controls">
+      <%= f.number_field :zipcode, :required => true %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :cell_phone, :class => "control-label" %>
+    <div class="controls">
+      <%= f.number_field :cell_phone,  :length=>10 %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :children, :class => "control-label" %>
+    <div class="controls">
+      <%= f.number_field :children, :required => true, :length=>10 %>
+    </div>
+  </div>
+  <%#= hidden_field_tag 'type',@type%>
+  
+  <div class="control-group">
+    <div class="controls">
+      <%= f.submit (@record.new_record? ? "Submit" : "Update"), :class => "btn btn-primary" %>
+    </div>
+  </div>
+
+<% end %>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#user_birth_date").datepicker({
+      maxDate: new Date(),
+      dateFormat:'yy-mm-dd'
+    });
+  })
+</script>

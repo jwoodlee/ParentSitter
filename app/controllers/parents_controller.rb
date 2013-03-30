@@ -2,7 +2,6 @@ class ParentsController < ApplicationController
 
 	def new
 		@record = Parent.new(session[:user])
-		render :template => "users/new"
 	end
 
 	def create
@@ -10,7 +9,7 @@ class ParentsController < ApplicationController
 		if @record.save
     	redirect_to root_url, notice: 'Parent Registered Successfully.' 
     else
-	    render :template => "users/new"
+	    render :template => "new"
    	end
 	end
 end

@@ -10,7 +10,8 @@ FactoryGirl.define do
 		f.birth_date "12-12-1985"
 		f.gender "male"
 		f.zipcode "208112"
-		f.cell_phone "78979787892"	
+		f.cell_phone "78979787892"
+		f.children 2
 	end
 
 	factory(:sitter) do |f|
@@ -25,5 +26,6 @@ FactoryGirl.define do
 		f.gender "male"
 		f.zipcode "208112"
 		f.cell_phone "78979787892"	
+		f.experience 3
 	end
 end

@@ -11,6 +11,7 @@ Feature: Facebook
     And I fill in "Birth date" with "1989-03-19"
     And I fill in "Zipcode" with "208006"
     And I fill in "Cell phone" with "9876543210"
+    And I fill in "Experience" with "3"
     And I press "Submit"
     Then I should see "Sitter Registered Successfully."
     And I follow "Welcome Sitter"
